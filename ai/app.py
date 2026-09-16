@@ -1,5 +1,6 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from huggingface_hub import hf_hub_download
 import tensorflow as tf
 from PIL import Image
 import numpy as np
@@ -7,7 +8,6 @@ import io
 
 app = FastAPI()
 
-# Allow React frontend to connect
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,8 +16,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load trained AI model
-model = tf.keras.models.load_model("pneumonia_model.keras")
+# Download the trained model from Hugging Face
+model_path = hf_hub_download(
+    repo_id="divya1906/pneumonia-detection-model",
+    filename="pneumonia_model.keras"
+)
+
+# Load the trained AI model
+model = tf.keras.models.load_model(model_path)
 
 
 @app.get("/")
@@ -28,22 +34,21 @@ def home():
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
 
-    # Read uploaded image
     image_data = await file.read()
 
-    # Convert image to PIL image
-    image = Image.open(io.BytesIO(image_data)).convert("RGB")
+    image = Image.open(
+        io.BytesIO(image_data)
+    ).convert("RGB")
 
-    # Resize image
     image = image.resize((224, 224))
 
-    # Convert image to array
     image_array = np.array(image) / 255.0
 
-    # Add batch dimension
-    image_array = np.expand_dims(image_array, axis=0)
+    image_array = np.expand_dims(
+        image_array,
+        axis=0
+    )
 
-    # AI prediction
     prediction = model.predict(image_array)[0][0]
 
     if prediction >= 0.5:
