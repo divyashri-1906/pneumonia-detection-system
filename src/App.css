@@ -1,0 +1,652 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #edf6fb;
+  color: #173f5f;
+}
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+
+/* =========================
+   TOP HEADER
+========================= */
+
+.top-header {
+  width: 100%;
+  min-height: 88px;
+  padding: 14px 6%;
+  background: linear-gradient(
+    135deg,
+    #123f63,
+    #1769a8
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+
+  box-shadow:
+    0 6px 20px rgba(18, 63, 99, 0.2);
+}
+
+
+/* BRAND */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-icon {
+  font-size: 38px;
+}
+
+.brand h2 {
+  margin: 0;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.brand p {
+  margin: 3px 0 0;
+  color: #d8efff;
+  font-size: 12px;
+}
+
+
+/* HEADER RIGHT */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #e7f7ff;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.header-right strong {
+  color: white;
+}
+
+.shield {
+  font-size: 28px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+  width: 92%;
+  max-width: 1050px;
+
+  margin: 32px auto;
+
+  padding: 45px 50px;
+
+  background: white;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 15px 45px rgba(20, 70, 100, 0.12);
+}
+
+
+/* =========================
+   MAIN TITLE
+========================= */
+
+.main-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.large-lung {
+  font-size: 43px;
+  margin-bottom: 5px;
+}
+
+.main-title h1 {
+  margin: 0;
+
+  font-size: 38px;
+
+  color: #123f63;
+
+  font-weight: 700;
+}
+
+.main-title p {
+  margin: 7px 0 0;
+
+  color: #6e8799;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   UPLOAD SECTION
+========================= */
+
+.upload-section {
+  position: relative;
+
+  padding: 30px;
+
+  background: #f7fbfe;
+
+  border: 2px dashed #9fc7e3;
+
+  border-radius: 18px;
+}
+
+
+/* NUMBER CIRCLE */
+
+.section-number {
+  position: absolute;
+
+  top: 25px;
+  left: 25px;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: #1976b9;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+}
+
+
+/* UPLOAD TITLE */
+
+.upload-section h2 {
+  margin: 0;
+
+  padding-left: 50px;
+
+  font-size: 22px;
+
+  color: #174d75;
+}
+
+.upload-info {
+  margin: 6px 0 22px;
+
+  padding-left: 50px;
+
+  color: #7890a1;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   FILE INPUT
+========================= */
+
+.upload-box {
+  text-align: center;
+}
+
+input[type="file"] {
+  display: block;
+
+  width: 100%;
+
+  padding: 12px;
+
+  font-size: 14px;
+
+  color: #536f82;
+
+  background: white;
+
+  border: 1px solid #d3e2ec;
+
+  border-radius: 9px;
+}
+
+
+/* FILE BUTTON */
+
+input[type="file"]::file-selector-button {
+  background: #1976b9;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  padding: 10px 18px;
+
+  margin-right: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #125f96;
+}
+
+
+/* =========================
+   X-RAY PREVIEW
+========================= */
+
+.preview {
+  display: block;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  height: 340px;
+
+  object-fit: contain;
+
+  margin: 25px auto 0;
+
+  padding: 8px;
+
+  background: #12232f;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   ANALYZE BUTTON
+========================= */
+
+.analyze-button {
+  display: block;
+
+  width: 100%;
+
+  max-width: 370px;
+
+  margin: 30px auto;
+
+  padding: 16px 25px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: linear-gradient(
+    135deg,
+    #1976b9,
+    #2189d1
+  );
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px rgba(25, 118, 185, 0.25);
+
+  transition: all 0.2s ease;
+}
+
+.analyze-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(25, 118, 185, 0.3);
+}
+
+.analyze-button:disabled {
+  background: #9aaebb;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 35px;
+
+  padding: 30px;
+
+  margin-top: 25px;
+
+  border-radius: 18px;
+
+  background: #f8fbfd;
+
+  border: 1px solid #d5e4ed;
+}
+
+
+/* RESULT LEFT */
+
+.result-left {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* RESULT ICON */
+
+.result-icon {
+  flex-shrink: 0;
+
+  width: 72px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  background: #e7f3ec;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 34px;
+}
+
+
+/* RESULT CONTENT */
+
+.result-content {
+  width: 100%;
+}
+
+.result-title {
+  margin: 0 0 4px;
+
+  color: #668092;
+
+  font-size: 15px;
+}
+
+.result-card h2 {
+  margin: 0 0 8px;
+
+  font-size: 31px;
+
+  color: #16804a;
+}
+
+
+/* PNEUMONIA */
+
+.result-card.pneumonia h2 {
+  color: #e33d57;
+}
+
+.result-card.pneumonia .result-icon {
+  background: #ffe8ed;
+}
+
+
+/* CONFIDENCE */
+
+.confidence-text {
+  margin: 0 0 10px;
+
+  color: #60798a;
+
+  font-size: 16px;
+}
+
+.confidence-text strong {
+  color: #173f5f;
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+.progress-container {
+  width: 100%;
+
+  max-width: 380px;
+
+  height: 13px;
+
+  background: #dce6ed;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+
+  border-radius: 20px;
+
+  background: #16804a;
+
+  transition:
+    width 0.8s ease;
+}
+
+
+/* PNEUMONIA BAR */
+
+.result-card.pneumonia .progress-bar {
+  background: #e33d57;
+}
+
+
+/* VALUE */
+
+.progress-value {
+  min-width: 55px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #173f5f;
+}
+
+
+/* CONFIDENCE LABEL */
+
+.confidence-label {
+  display: inline-block;
+
+  margin-top: 10px;
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  background: #e7f3ec;
+
+  color: #16804a;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.result-card.pneumonia .confidence-label {
+  background: #ffe8ed;
+
+  color: #e33d57;
+}
+
+
+/* =========================
+   INTERPRETATION
+========================= */
+
+.interpretation {
+  flex: 0.8;
+
+  border-left: 1px solid #d5e1e9;
+
+  padding-left: 30px;
+}
+
+.interpretation h3 {
+  margin-top: 0;
+
+  color: #315d78;
+
+  font-size: 17px;
+}
+
+.interpretation p {
+  margin-bottom: 0;
+
+  color: #718697;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.warning {
+  margin-top: 25px;
+
+  padding: 13px 20px;
+
+  border-radius: 10px;
+
+  background: #f1f7fb;
+
+  color: #718697;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+  .top-header {
+    padding: 13px 20px;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .container {
+    width: 94%;
+
+    padding: 30px 20px;
+
+    margin-top: 20px;
+  }
+
+  .main-title h1 {
+    font-size: 29px;
+  }
+
+  .upload-section {
+    padding: 25px 18px;
+  }
+
+  .upload-section h2 {
+    padding-left: 42px;
+  }
+
+  .upload-info {
+    padding-left: 42px;
+  }
+
+  .result-card {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .interpretation {
+    border-left: none;
+
+    border-top: 1px solid #d5e1e9;
+
+    padding-left: 0;
+
+    padding-top: 20px;
+  }
+
+  .progress-container {
+    max-width: 100%;
+  }
+}
